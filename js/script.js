@@ -57,10 +57,11 @@ function addPagination(list) {
       `;
       linkList.insertAdjacentElement("beforeend", li);      
    }
-   linkList.firstChild.classList.add('active');
+   linkList.firstChild.className = 'active';
    linkList.addEventListener('click', (e) => {
       if (e.target.tagName === 'BUTTON'){
-         linkList.children.classList.remove('active');
+         let activeBtn = document.querySelector('.active');
+         activeBtn.className = '';
          e.target.classList.add('active');
          showPage(data, e.target.textContent);
       }
