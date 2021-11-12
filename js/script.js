@@ -2,21 +2,9 @@
 Treehouse Techdegree: Data Pagination and Filtering
 */
 
-
-
-/*
-For assistance:
-   Check out the "Project Resources" section of the Instructions tab
-   Reach out in your Slack community if you have questions
-*/
-
-
-
-/*
-Create the `showPage` function
-This function will create and insert/append the elements needed to display a "page" of nine students
-*/
 const studentList = document.querySelector('.student-list')
+
+// generates and displays 9 list items of student details from data.js array
 
 function showPage(list, page) {
    const startIndex = (page * 9) - 9;
@@ -30,7 +18,7 @@ function showPage(list, page) {
          li.innerHTML = `
                <div class="student-details">
                   <img class="avatar" src="${list[i].picture.large}" alt="Profile Picture">
-                  <h3>${list[i].name.first} ${list[i].name.last}</h3>
+                  <h3 class="student-names">${list[i].name.first} ${list[i].name.last}</h3>
                   <span class="email">${list[i].email}</span>
                </div>
                <div class="joined-details">
@@ -41,10 +29,7 @@ function showPage(list, page) {
    }
 }
 
-/*
-Create the `addPagination` function
-This function will create and insert/append the elements needed for the pagination buttons
-*/
+// Creates and inserts elements needed for the pagination buttons
 
 function addPagination(list) {
    let btnNum = Math.ceil(list.length / 9);
@@ -67,8 +52,6 @@ function addPagination(list) {
       }
    })
 }
-
-// Call functions
 
 showPage(data, 1);
 addPagination(data);
