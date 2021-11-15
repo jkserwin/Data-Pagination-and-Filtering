@@ -42,7 +42,8 @@ function addPagination(list) {
       `;
       linkList.insertAdjacentElement("beforeend", li);      
    }
-   linkList.firstChild.className = 'active';
+   let btns = document.getElementsByTagName('BUTTON');
+   btns[0].className = 'active';
    linkList.addEventListener('click', (e) => {
       if (e.target.tagName === 'BUTTON'){
          let activeBtn = document.querySelector('.active');
